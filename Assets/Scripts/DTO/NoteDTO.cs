@@ -11,3 +11,11 @@ public class NoteDTO
     public int type;
     public List<NoteDTO> notes;
 }
+public class SongDTO
+{
+    public string name;
+    public int maxBlock;
+    public int bpm;
+    public int offset;
+    public List<NoteDTO> notes;
+}
