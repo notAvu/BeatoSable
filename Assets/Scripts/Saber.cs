@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class Saber : MonoBehaviour
 {
+    //[SerializeField]
+    //private LayerMask colorLayer; //the layer assigned to the elements you must hit with this instance's gameobject
     [SerializeField]
-    private LayerMask colorLayer; //the layer assigned to the elements you must hit with this instance's gameobject
+    private string targetTag;
     private Vector3 lastPosition;
-    private const string NON_DIRECTIONAL_TAG = "nonDirectional"; //This is the tag that identifies cubes that don't need to be cut at an specific angle 
+    
+    //private const string NON_DIRECTIONAL_TAG = "nonDirectional"; //This is the tag that identifies cubes that don't need to be cut at an specific angle 
     private void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, colorLayer))
+        Debug.DrawRay(transform.position, transform.forward, Color.green, 1f);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
         {
+            //Debug.Log("colorLayer "+LayerMask.LayerToName(/*colorLayer*/.value));
+            Debug.Log(hit.transform.tag);
 
-            if (!string.IsNullOrEmpty(hit.transform.tag) && hit.transform.CompareTag(NON_DIRECTIONAL_TAG))
+            if (!string.IsNullOrEmpty(hit.transform.tag) && hit.transform.CompareTag(targetTag) /*&& hit.transform.gameObject.layer.Equals(colorLayer)*/)/*&& hit.transform.CompareTag(NON_DIRECTIONAL_TAG)*/
             {
                 Vector3 posDiff = transform.position - lastPosition;
-                if (Vector3.Angle(posDiff, hit.transform.up) > 130 ||
-                    Vector3.Angle(posDiff, hit.transform.right) > 130 ||
-                    Vector3.Angle(posDiff, -hit.transform.up) > 130 || 
-                    Vector3.Angle(posDiff, -hit.transform.right) > 130)
+                if (Vector3.Angle(posDiff, hit.transform.up) > 130)
                 {
                     CutCube(hit.transform.gameObject);
                 }
-                else if(Vector3.Angle(posDiff, hit.transform.up) > 130)
+                else /*if(Vector3.Angle(posDiff, hit.transform.up) > 130)*/
                 {
-                    CutCube(hit.transform.gameObject);
+                    FailCubeCut(hit.transform.gameObject);
                 }
             }
         }
@@ -34,6 +37,10 @@ public class Saber : MonoBehaviour
     }
     private void CutCube(GameObject cube)
     {
-        Destroy(cube);
+        cube.GetComponent<IHitObject>().Hit();
+    }
+    private void FailCubeCut(GameObject cube)
+    {
+        cube.GetComponent<IHitObject>().Miss();
     }
 }

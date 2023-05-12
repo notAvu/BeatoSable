@@ -6,6 +6,10 @@ TagManager:
   tags:
   - RoomLight
   - SamplesInfoPanel
+  - Lane
+  - Cube
+  - RedCube
+  - BlueCube
   layers:
   - Default
   - TransparentFX
@@ -15,10 +19,10 @@ TagManager:
   - UI
   - Cubes
   - Sabers
-  - 
-  - 
-  - 
-  - 
+  - RedSaber
+  - RedCube
+  - BlueSaber
+  - BlueCube
   - 
   - 
   - 

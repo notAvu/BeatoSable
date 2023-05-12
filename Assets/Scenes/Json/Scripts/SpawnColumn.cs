@@ -27,7 +27,7 @@ public class SpawnColumn : MonoBehaviour
     private void Awake()
     {
         conductor = GameObject.Find("RhythmConductor").GetComponent<RhythmConductor>();
-        HitBar = GameObject.Find("HitBar").transform;
+        //HitBar = GameObject.Find("HitBar").transform;
     }
     private void Start()
     {
@@ -47,6 +47,7 @@ public class SpawnColumn : MonoBehaviour
     //    var currentNoteTs = notes[inputIndex];
     //    var songTime = conductor.songPositionSeconds;
     //}
+
     // This may be better done as a coroutine that loads the level in a loading screen before playing the actual song
     /// <summary>
     /// Generates the notes that are going to be played in this column

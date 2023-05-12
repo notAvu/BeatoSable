@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Quick skecth of the longNoteScript 
 /// <summary>
 /// <strong>
-/// TODO: make headNote fall (Implement instantiation ts and that kind of stuff)
+/// There will not be any long notes yet, because i would have to implement colliders between notes and I don't have time for that, not without being able to test it
 /// </strong>
 /// </summary>
 public class LongNote : MonoBehaviour
@@ -38,7 +37,7 @@ public class LongNote : MonoBehaviour
     }
     private void Start()
     {
-        BeingHit = true;// Just for testing, must change when input is correctly implemented
+        //BeingHit = true;// Just for testing, must change when input is correctly implemented
         foreach (var note in NestedNotes)
         {
             note.GetComponent<TickNoteScript>().HeadNote = this;
