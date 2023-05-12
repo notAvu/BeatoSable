@@ -25,11 +25,11 @@ public class Saber : MonoBehaviour
                 Vector3 posDiff = transform.position - lastPosition;
                 if (Vector3.Angle(posDiff, hit.transform.up) > 130)
                 {
-                    CutCube(hit.transform.gameObject);
+                    FailCubeCut(hit.transform.gameObject);
                 }
                 else /*if(Vector3.Angle(posDiff, hit.transform.up) > 130)*/
                 {
-                    FailCubeCut(hit.transform.gameObject);
+                    CutCube(hit.transform.gameObject);
                 }
             }
         }

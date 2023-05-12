@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38e3354fdeeb35448c78895c2ee9012, type: 3}
+  m_Name: Break it off
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 80654f6759dd79e48b0e70b3bc3236fe, type: 3}
+  beatmapJson: {fileID: 4900000, guid: 2250ba5ebb0e0b0498a97fa8cf74f2c0, type: 3}
+  coverArt: {fileID: 21300000, guid: 85ace479c989bb44ea6999101c395c74, type: 3}

@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d574e3ecddeb1642bf522cb4667b4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColumnIndex: 0
+  ColumnIndex: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   despawnPosition: {x: 0, y: 0, z: 0}
   singleNotePrefab: {fileID: 1273260529984002527, guid: 7e050964db6f7834ba7402a5170b02e8, type: 3}
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d574e3ecddeb1642bf522cb4667b4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColumnIndex: 1
+  ColumnIndex: 0
   spawnPosition: {x: 0, y: 0, z: 0}
   despawnPosition: {x: 0, y: 0, z: 0}
   singleNotePrefab: {fileID: 1273260529984002527, guid: 7e050964db6f7834ba7402a5170b02e8, type: 3}
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 0}
-  songFiles: {fileID: 11400000, guid: 7902f30444b2c8d4a9248415237e4e7f, type: 2}
+  songFiles: {fileID: 11400000, guid: 75970c4320a195545a3d395f933fb7b8, type: 2}
   secondsPerNote: 0
   offset: 0
   columnCount: 0

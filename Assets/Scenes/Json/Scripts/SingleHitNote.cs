@@ -23,7 +23,7 @@ public class SingleHitNote : MonoBehaviour, IHitObject
         var zRotation = UnityEngine.Random.Range(0, 3) * 90;
         transform.Rotate(new Vector3(0, 0, zRotation));
 
-        if (noteData.Column< 2)
+        if (noteData.Column<2)
         {
             gameObject.layer = LayerMask.NameToLayer("RedCube");
             tag = "RedCube";
