@@ -39,6 +39,7 @@ public class RhythmConductor : MonoBehaviour
         lanes = new List<SpawnColumn>();
         var lanesGo= GameObject.FindGameObjectsWithTag("Lane").ToList();
         lanesGo.ForEach(a => lanes.Add(a.GetComponent<SpawnColumn>()));
+        StartCoroutine(SongEndTimer());
     }
     private void Start()
     {
@@ -97,7 +98,13 @@ public class RhythmConductor : MonoBehaviour
             l.InstantiateNotes(columnNotes);
         }
     }
-    
+    private IEnumerator SongEndTimer()
+    {
+        var songDurationInSecs = songFiles.audioClip.samples / songFiles.audioClip.frequency;
+        Debug.Log(songDurationInSecs);
+        yield return new WaitForSeconds(songDurationInSecs+1);
+        Debug.Log("Song finished");
+    }
     public double GetAudioSourceTime()
     {
         return (double) audioSource.timeSamples / audioSource.clip.frequency;
